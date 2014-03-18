@@ -37,6 +37,9 @@ public:
 	/** Play the death animation */
 	Animate* playDeathAnimation();
 	
+	/** Update the fish movement */
+	void updateFishMovement(float dt);
+	
 protected:
 	CC_SYNTHESIZE(float, fishScore, FishScore);
 };

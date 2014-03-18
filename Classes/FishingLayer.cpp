@@ -69,11 +69,8 @@ bool FishingLayer::init(){
 	fishActorsInital();
 	
 	//Update the fishes one time
-	updateFishMovement(2.0f);
+	updateFishMovement();
 	
-	//Update the speed and direction of the fishes every 2 secs
-    schedule(schedule_selector(FishingLayer::updateFishMovement), 2.0f);
-
 	//Preload background effect
     CocosDenshion::SimpleAudioEngine::getInstance()->preloadEffect(SOUND_COIN);
     CocosDenshion::SimpleAudioEngine::getInstance()->preloadEffect(SOUND_FIRE);
@@ -118,7 +115,7 @@ void FishingLayer::bulletShoot(Point endPosition){
 		//Set the offest of the raotation
 		if(cannon->getRotation()<=0){
 			
-			shifting = 40.0f;
+			shifting = 20.0f;
 		}else{
 			
 			shifting = -20.0f;
@@ -190,10 +187,25 @@ void FishingLayer::setCannonRotation(Widget* target, Point targetPos){
 
 void FishingLayer::update(float delta){
 	
-	//Update the movement of fishes by their speed
+	//Update the movement of fishes by their speed, limit the move area of the fishes
 	for(auto fish:fishActors){
+				
+		if(fish->getPositionX()>1000){
+			
+			fish->setPosition(Point(-40,rand()% 480));
+		}else if (fish->getPositionX()<-100){
+			
+			fish->setPosition(1000,rand()%480);
+		}else if (fish->getPositionY()<-100){
 		
-		fish->setPosition(fish->getPositionX()+fish->getSpeedX(), fish->getPositionY()+fish->getSpeedY());
+			fish->setPosition(rand()%960,520);
+		}else if (fish->getPositionY()<-100){
+	
+			fish->setPosition(rand()%960,-40);
+		}else{
+
+			fish->setPosition(fish->getPositionX()+fish->getSpeedX(), fish->getPositionY()+fish->getSpeedY());
+		}
 	}
 	
 	//Check the collide
@@ -293,7 +305,7 @@ void FishingLayer::fishActorsInital(){
 	auto winSize = Director::getInstance()->getWinSize();
 	
 	//Init fishes
-	for (int fishIndex=0; fishIndex<10; fishIndex++) {
+	for (int fishIndex=0; fishIndex<8; fishIndex++) {
 		
 		//Create fishes
 		auto smallFishActor = FishActor::createWithType(FishActor::FishActorType::SmallFish);
@@ -303,11 +315,11 @@ void FishingLayer::fishActorsInital(){
 		auto breamFishActor = FishActor::createWithType(FishActor::FishActorType::SmallFish);
 		
 		//Set ths fishes position
-		smallFishActor->setPosition(Point(winSize.width/(rand()%3+fishIndex),winSize.height/(rand()%2+fishIndex)));
-		angelFishActor->setPosition(Point(winSize.width/(rand()%3+fishIndex),winSize.height/(rand()%2+fishIndex)));
-		croakerFishActor->setPosition(Point(winSize.width/(rand()%3+fishIndex),winSize.height/(rand()%2+fishIndex)));
-		amphiprionFishActor->setPosition(Point(winSize.width/(rand()%3+fishIndex),winSize.height/(rand()%2+fishIndex)));
-		breamFishActor->setPosition(Point(winSize.width/(rand()%3+fishIndex),winSize.height/(rand()%2+fishIndex)));
+		smallFishActor->setPosition(Point(rand()%910,rand()%430));
+		angelFishActor->setPosition(Point(rand()%910,rand()%430));
+		croakerFishActor->setPosition(Point(rand()%910,rand()%430));
+		amphiprionFishActor->setPosition(Point(rand()%910,rand()%430));
+		breamFishActor->setPosition(Point(rand()%910,rand()%430));
 		
 		//Add the fishes into the layer
 		addChild(smallFishActor,1);
@@ -325,14 +337,14 @@ void FishingLayer::fishActorsInital(){
 	}
 }
 
-void FishingLayer::updateFishMovement(float dt){
+void FishingLayer::updateFishMovement(){
 	
 	//Change the direction and speed of the fishes
 	for (auto fish:fishActors) {
 		
 		auto direction = rand()%3-1.0f;
-		auto shiftX = (rand()%5+1)*direction;
-		auto shiftY = (rand()%5+1)*direction;
+		auto shiftX = (rand()%3+1)*direction;
+		auto shiftY = (rand()%3+1)*direction;
 				
 		fish->setSpeedX(shiftX==0?1:shiftX);
 		fish->setSpeedY(shiftY==0?1:shiftY);

@@ -61,7 +61,7 @@ protected:
 	
 	void removeFishes();
 	
-	void updateFishMovement(float dt);
+	void updateFishMovement();
 };
 
 #endif

@@ -11,7 +11,6 @@
 FishActor* FishActor::createWithType(FishActorType fishType){
 	
 	FishActor* fish;
-	FishActorType ttt = FishActorType::SmallFish;
 
 	//Create the fishes by the fish type
 	switch (fishType) {
@@ -44,6 +43,18 @@ FishActor* FishActor::createWithType(FishActorType fishType){
 	return fish;
 }
 
+void FishActor::updateFishMovement(float delta){
+	
+	auto direction = rand()%3-1.0f;
+	auto shiftX = (rand()%5+1)*direction;
+	auto shiftY = (rand()%5+1)*direction;
+	
+	setSpeedX(shiftX==0?1:shiftX);
+	setSpeedY(shiftY==0?1:shiftY);
+	auto rotation = -atan2(shiftY, shiftX);
+	setRotation(rotation*180.0f/3.14f+180.0f);
+}
+
 bool SmallFishActor::init(){
 	
 	FishActor::init();
@@ -68,6 +79,8 @@ bool SmallFishActor::init(){
 	
 	//Run the swiming action forever
 	runAction(RepeatForever::create(fishAnimate));
+	
+    schedule(schedule_selector(FishActor::updateFishMovement), 3+rand()%2);
 	
 	return true;
 }
@@ -116,8 +129,11 @@ bool AngelFishActor::init(){
 	//Create swimming animation
 	auto fishAnimation = Animation::createWithSpriteFrames(fishes,0.1);
 	auto fishAnimate = Animate::create(fishAnimation);
+	
 	//Run the swiming action forever
 	runAction(RepeatForever::create(fishAnimate));
+	
+	schedule(schedule_selector(FishActor::updateFishMovement), 3.5+rand()%2);
 	
 	return true;
 }
@@ -166,6 +182,8 @@ bool CroakerActor::init(){
 	//Run the swiming action forever
 	runAction(RepeatForever::create(fishAnimate));
 	
+	schedule(schedule_selector(FishActor::updateFishMovement), 2+rand()%4);
+	
 	return true;
 }
 
@@ -212,6 +230,8 @@ bool AmphiprionActor::init(){
 	
 	//Run the swiming action forever
 	runAction(RepeatForever::create(fishAnimate));
+	
+	schedule(schedule_selector(FishActor::updateFishMovement), 3+rand()%2);
 	
 	return true;
 }
@@ -263,6 +283,8 @@ bool BreamActor::init(){
 	
 	//Run the swiming action forever
 	runAction(RepeatForever::create(fishAnimate));
+	
+	schedule(schedule_selector(FishActor::updateFishMovement), 2+rand()%3);
 	
 	return true;
 }
