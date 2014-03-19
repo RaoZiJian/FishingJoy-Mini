@@ -125,7 +125,7 @@ void MainMenuLayer::fishActorsInital(){
 	
 	auto marlin = FishActor::createWithType(FishActor::FishActorType::MarlinsFish);
 	marlin->setVisible(false);
-	marlin->setPosition(Point(2000, winSize.height/2));
+	marlin->setPosition(Point(1000, winSize.height/2));
 	marlin->runAction(MainMenuLayer::createMarlinMoveAction((MarlinsFishActor*)marlin));
 	addChild(marlin, 1);
 }
@@ -183,10 +183,12 @@ void MainMenuLayer::marlinTurnBack(Node *sender){
 
 ActionInterval* MainMenuLayer::createFishMoveAction(FishActor *fish){
 	
+	//Let the matrix of fishes move back and forth
 	return RepeatForever::create(Sequence::create(MoveTo::create(12, Point(fish->getPositionX()-1300, fish->getPositionY())),CallFunc::create(CC_CALLBACK_0(MainMenuLayer::turnBack,this,fish)),MoveTo::create(8, Point(fish->getPositionX()+1000,fish->getPositionY())),CallFunc::create(CC_CALLBACK_0(MainMenuLayer::turnBack,this,fish)), NULL));
 }
 
 ActionInterval* MainMenuLayer::createMarlinMoveAction(MarlinsFishActor *fish){
 	
+	//Let the marlin fis move behind the matrix of fishes
 	return RepeatForever::create(Sequence::create(MoveTo::create(12, Point(fish->getPositionX()-1300, fish->getPositionY())),CallFunc::create(CC_CALLBACK_0(MainMenuLayer::marlinTurnBack,this,fish)),MoveTo::create(8, Point(fish->getPositionX()+1000,fish->getPositionY())),CallFunc::create(CC_CALLBACK_0(MainMenuLayer::marlinTurnBack,this,fish)), NULL));
 }
