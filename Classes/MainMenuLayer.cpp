@@ -74,8 +74,7 @@ bool MainMenuLayer::init(){
 	//Init the fishes
 	fishActorsInital();
 	
-	//Activate the update()
-	scheduleUpdate();
+	unscheduleUpdate();
 	
     /**Preload background music
        set default volume
@@ -107,6 +106,13 @@ void MainMenuLayer::fishActorsInital(){
 		croakerFishActor->setPosition(Point(2000-winSize.width/8*(fishIndex+1),winSize.height-winSize.height/6*3));
 		amphiprionFishActor->setPosition(Point(2000-winSize.width/8*(fishIndex+1),winSize.height-winSize.height/6*4));
 		breamFishActor->setPosition(Point(2000-winSize.width/8*(fishIndex+1),winSize.height-winSize.height/6*5));
+		
+		smallFishActor->runAction(createFishMoveAction(smallFishActor));
+		angelFishActor->runAction(createFishMoveAction(angelFishActor));
+		croakerFishActor->runAction(createFishMoveAction(croakerFishActor));
+		amphiprionFishActor->runAction(createFishMoveAction(amphiprionFishActor));
+		breamFishActor->runAction(createFishMoveAction(breamFishActor));
+
 		
 		//Add the fishes into the scene
 		addChild(smallFishActor,1);
@@ -151,35 +157,18 @@ ParticleSystemQuad* MainMenuLayer::createPaopao(Point position){
 	return paopao;
 }
 
-void MainMenuLayer::update(float delta){
+void MainMenuLayer::turnBack(Node* sender){
 	
-	MainMenuLayer::updateFishMovement();
+	if(sender->getRotation()==0.0f){
+		
+		sender->setRotation(180.00f);
+	}else {
+		
+		sender->setRotation(0.00f);
+	}
 }
 
-void MainMenuLayer::updateFishMovement(){
+ActionInterval* MainMenuLayer::createFishMoveAction(FishActor *fish){
 	
-	//Update the movement of the fishes
-	for(auto fish:fishActors){
-		
-		if(fish!=NULL){
-			
-			if(fish->getRotation()==0 &&fish->getPosition().x>-100){
-			
-				fish->setRotation(0);
-				fish->setPosition(fish->getPosition().x-3, fish->getPosition().y+1);
-			}else if(fish->getRotation()==0 && fish->getPosition().x<-80){
-			
-				fish->setRotation(180);
-				fish->setPosition(fish->getPosition().x+3, fish->getPosition().y+1);
-			}else if (fish->getRotation()==180 && fish->getPosition().x<1000){
-			
-				fish->setRotation(180);
-				fish->setPosition(fish->getPosition().x+3, fish->getPosition().y-2);
-			}else if (fish->getRotation()==180 && fish->getPosition().x>980){
-			
-				fish->setRotation(0);
-				fish->setPosition(fish->getPosition().x-3, fish->getPosition().y+1);
-			}
-		}
-	}
+	return RepeatForever::create(Sequence::create(MoveTo::create(12, Point(fish->getPositionX()-1300, fish->getPositionY())),CallFunc::create(CC_CALLBACK_0(MainMenuLayer::turnBack,this,fish)),MoveTo::create(8, Point(fish->getPositionX()+1000,fish->getPositionY())),CallFunc::create(CC_CALLBACK_0(MainMenuLayer::turnBack,this,fish)), NULL));
 }

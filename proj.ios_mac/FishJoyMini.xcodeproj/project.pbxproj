@@ -12,7 +12,13 @@
 		1AC6FB21180E996B004C840B /* libcocos2dx Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FAF9180E9839004C840B /* libcocos2dx Mac.a */; };
 		1AC6FB22180E996B004C840B /* libcocos2dx-extensions Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FAFB180E9839004C840B /* libcocos2dx-extensions Mac.a */; };
 		1AC6FB23180E996B004C840B /* libCocosDenshion Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FB01180E9839004C840B /* libCocosDenshion Mac.a */; };
+		1AC6FB2E180E99EB004C840B /* libbox2d iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FB0D180E9839004C840B /* libbox2d iOS.a */; };
+		1AC6FB2F180E99EB004C840B /* libchipmunk iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FB0B180E9839004C840B /* libchipmunk iOS.a */; };
+		1AC6FB30180E99EB004C840B /* libcocos2dx iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FB07180E9839004C840B /* libcocos2dx iOS.a */; };
+		1AC6FB31180E99EB004C840B /* libcocos2dx-extensions iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FB09180E9839004C840B /* libcocos2dx-extensions iOS.a */; };
+		1AC6FB32180E99EB004C840B /* libCocosDenshion iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FB0F180E9839004C840B /* libCocosDenshion iOS.a */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 503AE0F617EB97AB00D1A890 /* Icon.icns */; };
 		503AE10017EB989F00D1A890 /* AppController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FB17EB989F00D1A890 /* AppController.mm */; };
@@ -46,18 +52,31 @@
 		50EF629917ECD46A001EB2F8 /* Icon-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 50EF629517ECD46A001EB2F8 /* Icon-100.png */; };
 		50EF62A217ECD613001EB2F8 /* Icon-29.png in Resources */ = {isa = PBXBuildFile; fileRef = 50EF62A017ECD613001EB2F8 /* Icon-29.png */; };
 		50EF62A317ECD613001EB2F8 /* Icon-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 50EF62A117ECD613001EB2F8 /* Icon-50.png */; };
-		84F168D218D75EDC00FD088B /* Audio in Resources */ = {isa = PBXBuildFile; fileRef = 84F168CD18D75EDC00FD088B /* Audio */; };
-		84F168D318D75EDC00FD088B /* CocoStudioRes in Resources */ = {isa = PBXBuildFile; fileRef = 84F168CE18D75EDC00FD088B /* CocoStudioRes */; };
-		84F168D418D75EDC00FD088B /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 84F168CF18D75EDC00FD088B /* fonts */; };
-		84F168D518D75EDC00FD088B /* GameScene in Resources */ = {isa = PBXBuildFile; fileRef = 84F168D018D75EDC00FD088B /* GameScene */; };
-		84F168D618D75EDC00FD088B /* MainMenu in Resources */ = {isa = PBXBuildFile; fileRef = 84F168D118D75EDC00FD088B /* MainMenu */; };
-		84F168E618D75EE600FD088B /* FishActor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84F168D918D75EE600FD088B /* FishActor.cpp */; };
-		84F168E718D75EE600FD088B /* FishingLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84F168DB18D75EE600FD088B /* FishingLayer.cpp */; };
-		84F168E818D75EE600FD088B /* FishingPauseLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84F168DD18D75EE600FD088B /* FishingPauseLayer.cpp */; };
-		84F168E918D75EE600FD088B /* FishingScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84F168DF18D75EE600FD088B /* FishingScene.cpp */; };
-		84F168EA18D75EE600FD088B /* MainMenuLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84F168E118D75EE600FD088B /* MainMenuLayer.cpp */; };
-		84F168EB18D75EE600FD088B /* MainMenuScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84F168E318D75EE600FD088B /* MainMenuScene.cpp */; };
-		84F168F018D7654500FD088B /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84F168EE18D7654500FD088B /* AppDelegate.cpp */; };
+		84DF9E5C18D9496200B8C25A /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84DF9E4E18D9496200B8C25A /* AppDelegate.cpp */; };
+		84DF9E5D18D9496200B8C25A /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84DF9E4E18D9496200B8C25A /* AppDelegate.cpp */; };
+		84DF9E5E18D9496200B8C25A /* FishActor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84DF9E5018D9496200B8C25A /* FishActor.cpp */; };
+		84DF9E5F18D9496200B8C25A /* FishActor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84DF9E5018D9496200B8C25A /* FishActor.cpp */; };
+		84DF9E6018D9496200B8C25A /* FishingLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84DF9E5218D9496200B8C25A /* FishingLayer.cpp */; };
+		84DF9E6118D9496200B8C25A /* FishingLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84DF9E5218D9496200B8C25A /* FishingLayer.cpp */; };
+		84DF9E6218D9496200B8C25A /* FishingPauseLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84DF9E5418D9496200B8C25A /* FishingPauseLayer.cpp */; };
+		84DF9E6318D9496200B8C25A /* FishingPauseLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84DF9E5418D9496200B8C25A /* FishingPauseLayer.cpp */; };
+		84DF9E6418D9496200B8C25A /* FishingScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84DF9E5618D9496200B8C25A /* FishingScene.cpp */; };
+		84DF9E6518D9496200B8C25A /* FishingScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84DF9E5618D9496200B8C25A /* FishingScene.cpp */; };
+		84DF9E6618D9496200B8C25A /* MainMenuLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84DF9E5818D9496200B8C25A /* MainMenuLayer.cpp */; };
+		84DF9E6718D9496200B8C25A /* MainMenuLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84DF9E5818D9496200B8C25A /* MainMenuLayer.cpp */; };
+		84DF9E6818D9496200B8C25A /* MainMenuScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84DF9E5A18D9496200B8C25A /* MainMenuScene.cpp */; };
+		84DF9E6918D9496200B8C25A /* MainMenuScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84DF9E5A18D9496200B8C25A /* MainMenuScene.cpp */; };
+		84DF9E6F18D94AE400B8C25A /* Audio in Resources */ = {isa = PBXBuildFile; fileRef = 84DF9E6A18D94AE400B8C25A /* Audio */; };
+		84DF9E7018D94AE400B8C25A /* Audio in Resources */ = {isa = PBXBuildFile; fileRef = 84DF9E6A18D94AE400B8C25A /* Audio */; };
+		84DF9E7118D94AE400B8C25A /* CocoStudioRes in Resources */ = {isa = PBXBuildFile; fileRef = 84DF9E6B18D94AE400B8C25A /* CocoStudioRes */; };
+		84DF9E7218D94AE400B8C25A /* CocoStudioRes in Resources */ = {isa = PBXBuildFile; fileRef = 84DF9E6B18D94AE400B8C25A /* CocoStudioRes */; };
+		84DF9E7318D94AE400B8C25A /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 84DF9E6C18D94AE400B8C25A /* fonts */; };
+		84DF9E7418D94AE400B8C25A /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 84DF9E6C18D94AE400B8C25A /* fonts */; };
+		84DF9E7518D94AE400B8C25A /* GameScene in Resources */ = {isa = PBXBuildFile; fileRef = 84DF9E6D18D94AE400B8C25A /* GameScene */; };
+		84DF9E7618D94AE400B8C25A /* GameScene in Resources */ = {isa = PBXBuildFile; fileRef = 84DF9E6D18D94AE400B8C25A /* GameScene */; };
+		84DF9E7718D94AE400B8C25A /* MainMenu in Resources */ = {isa = PBXBuildFile; fileRef = 84DF9E6E18D94AE400B8C25A /* MainMenu */; };
+		84DF9E7818D94AE400B8C25A /* MainMenu in Resources */ = {isa = PBXBuildFile; fileRef = 84DF9E6E18D94AE400B8C25A /* MainMenu */; };
+		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
 		BF1C47F01293687400B63C5D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1C47EA1293683800B63C5D /* QuartzCore.framework */; };
 		D44C620C132DFF330009C878 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620B132DFF330009C878 /* OpenAL.framework */; };
@@ -248,25 +267,25 @@
 		50EF629517ECD46A001EB2F8 /* Icon-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-100.png"; sourceTree = "<group>"; };
 		50EF62A017ECD613001EB2F8 /* Icon-29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-29.png"; sourceTree = "<group>"; };
 		50EF62A117ECD613001EB2F8 /* Icon-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-50.png"; sourceTree = "<group>"; };
-		84F168CD18D75EDC00FD088B /* Audio */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Audio; sourceTree = "<group>"; };
-		84F168CE18D75EDC00FD088B /* CocoStudioRes */ = {isa = PBXFileReference; lastKnownFileType = folder; path = CocoStudioRes; sourceTree = "<group>"; };
-		84F168CF18D75EDC00FD088B /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fonts; sourceTree = "<group>"; };
-		84F168D018D75EDC00FD088B /* GameScene */ = {isa = PBXFileReference; lastKnownFileType = folder; path = GameScene; sourceTree = "<group>"; };
-		84F168D118D75EDC00FD088B /* MainMenu */ = {isa = PBXFileReference; lastKnownFileType = folder; path = MainMenu; sourceTree = "<group>"; };
-		84F168D918D75EE600FD088B /* FishActor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FishActor.cpp; path = ../Classes/FishActor.cpp; sourceTree = "<group>"; };
-		84F168DA18D75EE600FD088B /* FishActor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FishActor.h; path = ../Classes/FishActor.h; sourceTree = "<group>"; };
-		84F168DB18D75EE600FD088B /* FishingLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FishingLayer.cpp; path = ../Classes/FishingLayer.cpp; sourceTree = "<group>"; };
-		84F168DC18D75EE600FD088B /* FishingLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FishingLayer.h; path = ../Classes/FishingLayer.h; sourceTree = "<group>"; };
-		84F168DD18D75EE600FD088B /* FishingPauseLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FishingPauseLayer.cpp; path = ../Classes/FishingPauseLayer.cpp; sourceTree = "<group>"; };
-		84F168DE18D75EE600FD088B /* FishingPauseLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FishingPauseLayer.h; path = ../Classes/FishingPauseLayer.h; sourceTree = "<group>"; };
-		84F168DF18D75EE600FD088B /* FishingScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FishingScene.cpp; path = ../Classes/FishingScene.cpp; sourceTree = "<group>"; };
-		84F168E018D75EE600FD088B /* FishingScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FishingScene.h; path = ../Classes/FishingScene.h; sourceTree = "<group>"; };
-		84F168E118D75EE600FD088B /* MainMenuLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MainMenuLayer.cpp; path = ../Classes/MainMenuLayer.cpp; sourceTree = "<group>"; };
-		84F168E218D75EE600FD088B /* MainMenuLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainMenuLayer.h; path = ../Classes/MainMenuLayer.h; sourceTree = "<group>"; };
-		84F168E318D75EE600FD088B /* MainMenuScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MainMenuScene.cpp; path = ../Classes/MainMenuScene.cpp; sourceTree = "<group>"; };
-		84F168E418D75EE600FD088B /* MainMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainMenuScene.h; path = ../Classes/MainMenuScene.h; sourceTree = "<group>"; };
-		84F168EE18D7654500FD088B /* AppDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AppDelegate.cpp; path = ../Classes/AppDelegate.cpp; sourceTree = "<group>"; };
-		84F168EF18D7654500FD088B /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../Classes/AppDelegate.h; sourceTree = "<group>"; };
+		84DF9E4E18D9496200B8C25A /* AppDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AppDelegate.cpp; path = ../Classes/AppDelegate.cpp; sourceTree = "<group>"; };
+		84DF9E4F18D9496200B8C25A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../Classes/AppDelegate.h; sourceTree = "<group>"; };
+		84DF9E5018D9496200B8C25A /* FishActor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FishActor.cpp; path = ../Classes/FishActor.cpp; sourceTree = "<group>"; };
+		84DF9E5118D9496200B8C25A /* FishActor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FishActor.h; path = ../Classes/FishActor.h; sourceTree = "<group>"; };
+		84DF9E5218D9496200B8C25A /* FishingLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FishingLayer.cpp; path = ../Classes/FishingLayer.cpp; sourceTree = "<group>"; };
+		84DF9E5318D9496200B8C25A /* FishingLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FishingLayer.h; path = ../Classes/FishingLayer.h; sourceTree = "<group>"; };
+		84DF9E5418D9496200B8C25A /* FishingPauseLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FishingPauseLayer.cpp; path = ../Classes/FishingPauseLayer.cpp; sourceTree = "<group>"; };
+		84DF9E5518D9496200B8C25A /* FishingPauseLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FishingPauseLayer.h; path = ../Classes/FishingPauseLayer.h; sourceTree = "<group>"; };
+		84DF9E5618D9496200B8C25A /* FishingScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FishingScene.cpp; path = ../Classes/FishingScene.cpp; sourceTree = "<group>"; };
+		84DF9E5718D9496200B8C25A /* FishingScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FishingScene.h; path = ../Classes/FishingScene.h; sourceTree = "<group>"; };
+		84DF9E5818D9496200B8C25A /* MainMenuLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MainMenuLayer.cpp; path = ../Classes/MainMenuLayer.cpp; sourceTree = "<group>"; };
+		84DF9E5918D9496200B8C25A /* MainMenuLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainMenuLayer.h; path = ../Classes/MainMenuLayer.h; sourceTree = "<group>"; };
+		84DF9E5A18D9496200B8C25A /* MainMenuScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MainMenuScene.cpp; path = ../Classes/MainMenuScene.cpp; sourceTree = "<group>"; };
+		84DF9E5B18D9496200B8C25A /* MainMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainMenuScene.h; path = ../Classes/MainMenuScene.h; sourceTree = "<group>"; };
+		84DF9E6A18D94AE400B8C25A /* Audio */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Audio; sourceTree = "<group>"; };
+		84DF9E6B18D94AE400B8C25A /* CocoStudioRes */ = {isa = PBXFileReference; lastKnownFileType = folder; path = CocoStudioRes; sourceTree = "<group>"; };
+		84DF9E6C18D94AE400B8C25A /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fonts; sourceTree = "<group>"; };
+		84DF9E6D18D94AE400B8C25A /* GameScene */ = {isa = PBXFileReference; lastKnownFileType = folder; path = GameScene; sourceTree = "<group>"; };
+		84DF9E6E18D94AE400B8C25A /* MainMenu */ = {isa = PBXFileReference; lastKnownFileType = folder; path = MainMenu; sourceTree = "<group>"; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		BF1C47EA1293683800B63C5D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -281,9 +300,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AC6FB2E180E99EB004C840B /* libbox2d iOS.a in Frameworks */,
+				1AC6FB2F180E99EB004C840B /* libchipmunk iOS.a in Frameworks */,
+				1AC6FB30180E99EB004C840B /* libcocos2dx iOS.a in Frameworks */,
+				1AC6FB31180E99EB004C840B /* libcocos2dx-extensions iOS.a in Frameworks */,
+				1AC6FB32180E99EB004C840B /* libCocosDenshion iOS.a in Frameworks */,
 				D6B0611B1803AB670077942B /* CoreMotion.framework in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
+				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */,
+				BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */,
 				BF1712471292920000B8313A /* libz.dylib in Frameworks */,
 				BF1C47F01293687400B63C5D /* QuartzCore.framework in Frameworks */,
 				D44C620C132DFF330009C878 /* OpenAL.framework in Frameworks */,
@@ -336,20 +362,20 @@
 		15AA9C4015B7EC450033D6C2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				84F168EE18D7654500FD088B /* AppDelegate.cpp */,
-				84F168EF18D7654500FD088B /* AppDelegate.h */,
-				84F168D918D75EE600FD088B /* FishActor.cpp */,
-				84F168DA18D75EE600FD088B /* FishActor.h */,
-				84F168DB18D75EE600FD088B /* FishingLayer.cpp */,
-				84F168DC18D75EE600FD088B /* FishingLayer.h */,
-				84F168DD18D75EE600FD088B /* FishingPauseLayer.cpp */,
-				84F168DE18D75EE600FD088B /* FishingPauseLayer.h */,
-				84F168DF18D75EE600FD088B /* FishingScene.cpp */,
-				84F168E018D75EE600FD088B /* FishingScene.h */,
-				84F168E118D75EE600FD088B /* MainMenuLayer.cpp */,
-				84F168E218D75EE600FD088B /* MainMenuLayer.h */,
-				84F168E318D75EE600FD088B /* MainMenuScene.cpp */,
-				84F168E418D75EE600FD088B /* MainMenuScene.h */,
+				84DF9E4E18D9496200B8C25A /* AppDelegate.cpp */,
+				84DF9E4F18D9496200B8C25A /* AppDelegate.h */,
+				84DF9E5018D9496200B8C25A /* FishActor.cpp */,
+				84DF9E5118D9496200B8C25A /* FishActor.h */,
+				84DF9E5218D9496200B8C25A /* FishingLayer.cpp */,
+				84DF9E5318D9496200B8C25A /* FishingLayer.h */,
+				84DF9E5418D9496200B8C25A /* FishingPauseLayer.cpp */,
+				84DF9E5518D9496200B8C25A /* FishingPauseLayer.h */,
+				84DF9E5618D9496200B8C25A /* FishingScene.cpp */,
+				84DF9E5718D9496200B8C25A /* FishingScene.h */,
+				84DF9E5818D9496200B8C25A /* MainMenuLayer.cpp */,
+				84DF9E5918D9496200B8C25A /* MainMenuLayer.h */,
+				84DF9E5A18D9496200B8C25A /* MainMenuScene.cpp */,
+				84DF9E5B18D9496200B8C25A /* MainMenuScene.h */,
 			);
 			name = Classes;
 			path = ../classes;
@@ -465,11 +491,11 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				84F168CD18D75EDC00FD088B /* Audio */,
-				84F168CE18D75EDC00FD088B /* CocoStudioRes */,
-				84F168CF18D75EDC00FD088B /* fonts */,
-				84F168D018D75EDC00FD088B /* GameScene */,
-				84F168D118D75EDC00FD088B /* MainMenu */,
+				84DF9E6A18D94AE400B8C25A /* Audio */,
+				84DF9E6B18D94AE400B8C25A /* CocoStudioRes */,
+				84DF9E6C18D94AE400B8C25A /* fonts */,
+				84DF9E6D18D94AE400B8C25A /* GameScene */,
+				84DF9E6E18D94AE400B8C25A /* MainMenu */,
 			);
 			name = Resources;
 			path = ../Resources;
@@ -640,24 +666,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				5087E78117EB970100C73F5D /* Icon-120.png in Resources */,
-				84F168D618D75EDC00FD088B /* MainMenu in Resources */,
+				84DF9E7718D94AE400B8C25A /* MainMenu in Resources */,
 				5087E78617EB970100C73F5D /* Icon-76.png in Resources */,
 				5087E77F17EB970100C73F5D /* Default@2x.png in Resources */,
-				84F168D418D75EDC00FD088B /* fonts in Resources */,
+				84DF9E7318D94AE400B8C25A /* fonts in Resources */,
 				50EF629917ECD46A001EB2F8 /* Icon-100.png in Resources */,
 				5087E78317EB970100C73F5D /* Icon-152.png in Resources */,
 				5087E77D17EB970100C73F5D /* Default-568h@2x.png in Resources */,
 				5087E78517EB970100C73F5D /* Icon-72.png in Resources */,
 				50EF62A317ECD613001EB2F8 /* Icon-50.png in Resources */,
 				5087E78017EB970100C73F5D /* Icon-114.png in Resources */,
-				84F168D218D75EDC00FD088B /* Audio in Resources */,
+				84DF9E6F18D94AE400B8C25A /* Audio in Resources */,
 				50EF62A217ECD613001EB2F8 /* Icon-29.png in Resources */,
 				50EF629617ECD46A001EB2F8 /* Icon-40.png in Resources */,
-				84F168D518D75EDC00FD088B /* GameScene in Resources */,
+				84DF9E7518D94AE400B8C25A /* GameScene in Resources */,
 				5087E78217EB970100C73F5D /* Icon-144.png in Resources */,
 				50EF629817ECD46A001EB2F8 /* Icon-80.png in Resources */,
 				5087E78417EB970100C73F5D /* Icon-57.png in Resources */,
-				84F168D318D75EDC00FD088B /* CocoStudioRes in Resources */,
+				84DF9E7118D94AE400B8C25A /* CocoStudioRes in Resources */,
 				5087E77E17EB970100C73F5D /* Default.png in Resources */,
 				50EF629717ECD46A001EB2F8 /* Icon-58.png in Resources */,
 			);
@@ -667,7 +693,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84DF9E7218D94AE400B8C25A /* CocoStudioRes in Resources */,
 				503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */,
+				84DF9E7018D94AE400B8C25A /* Audio in Resources */,
+				84DF9E7618D94AE400B8C25A /* GameScene in Resources */,
+				84DF9E7818D94AE400B8C25A /* MainMenu in Resources */,
+				84DF9E7418D94AE400B8C25A /* fonts in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -678,16 +709,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84DF9E5C18D9496200B8C25A /* AppDelegate.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
-				84F168E718D75EE600FD088B /* FishingLayer.cpp in Sources */,
-				84F168F018D7654500FD088B /* AppDelegate.cpp in Sources */,
-				84F168EA18D75EE600FD088B /* MainMenuLayer.cpp in Sources */,
-				84F168E818D75EE600FD088B /* FishingPauseLayer.cpp in Sources */,
+				84DF9E6018D9496200B8C25A /* FishingLayer.cpp in Sources */,
+				84DF9E6618D9496200B8C25A /* MainMenuLayer.cpp in Sources */,
+				84DF9E6218D9496200B8C25A /* FishingPauseLayer.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
-				84F168E618D75EE600FD088B /* FishActor.cpp in Sources */,
+				84DF9E5E18D9496200B8C25A /* FishActor.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
-				84F168EB18D75EE600FD088B /* MainMenuScene.cpp in Sources */,
-				84F168E918D75EE600FD088B /* FishingScene.cpp in Sources */,
+				84DF9E6818D9496200B8C25A /* MainMenuScene.cpp in Sources */,
+				84DF9E6418D9496200B8C25A /* FishingScene.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -695,7 +726,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84DF9E5D18D9496200B8C25A /* AppDelegate.cpp in Sources */,
+				84DF9E6518D9496200B8C25A /* FishingScene.cpp in Sources */,
+				84DF9E6918D9496200B8C25A /* MainMenuScene.cpp in Sources */,
+				84DF9E6718D9496200B8C25A /* MainMenuLayer.cpp in Sources */,
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
+				84DF9E6118D9496200B8C25A /* FishingLayer.cpp in Sources */,
+				84DF9E5F18D9496200B8C25A /* FishActor.cpp in Sources */,
+				84DF9E6318D9496200B8C25A /* FishingPauseLayer.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -780,6 +818,7 @@
 				INFOPLIST_FILE = ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "";
@@ -809,6 +848,7 @@
 				INFOPLIST_FILE = ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "";
@@ -840,6 +880,7 @@
 				);
 				INFOPLIST_FILE = mac/Info.plist;
 				LIBRARY_SEARCH_PATHS = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
@@ -867,6 +908,7 @@
 				);
 				INFOPLIST_FILE = mac/Info.plist;
 				LIBRARY_SEARCH_PATHS = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Release;

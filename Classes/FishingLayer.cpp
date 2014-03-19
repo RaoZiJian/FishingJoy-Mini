@@ -315,11 +315,17 @@ void FishingLayer::fishActorsInital(){
 		auto breamFishActor = FishActor::createWithType(FishActor::FishActorType::SmallFish);
 		
 		//Set ths fishes position
-		smallFishActor->setPosition(Point(rand()%910,rand()%430));
-		angelFishActor->setPosition(Point(rand()%910,rand()%430));
-		croakerFishActor->setPosition(Point(rand()%910,rand()%430));
-		amphiprionFishActor->setPosition(Point(rand()%910,rand()%430));
+		smallFishActor->setPosition(Point(rand()%910,rand()%590));
+		angelFishActor->setPosition(Point(rand()%910,rand()%590));
+		croakerFishActor->setPosition(Point(rand()%910,rand()%590));
+		amphiprionFishActor->setPosition(Point(rand()%910,rand()%590));
 		breamFishActor->setPosition(Point(rand()%910,rand()%430));
+		
+		((SmallFishActor*)smallFishActor)->activateFishMovement();
+		((AngelFishActor*)angelFishActor)->activateFishMovement();
+		((CroakerActor*)croakerFishActor)->activateFishMovement();
+		((AmphiprionActor*)amphiprionFishActor)->activateFishMovement();
+		((BreamActor*)breamFishActor)->activateFishMovement();
 		
 		//Add the fishes into the layer
 		addChild(smallFishActor,1);

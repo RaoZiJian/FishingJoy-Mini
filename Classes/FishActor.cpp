@@ -80,9 +80,13 @@ bool SmallFishActor::init(){
 	//Run the swiming action forever
 	runAction(RepeatForever::create(fishAnimate));
 	
-    schedule(schedule_selector(FishActor::updateFishMovement), 3+rand()%2);
 	
 	return true;
+}
+
+void SmallFishActor::activateFishMovement(){
+	
+    schedule(schedule_selector(FishActor::updateFishMovement), 3+rand()%2);
 }
 
 Animate* SmallFishActor::playDeathAnimation(){
@@ -132,11 +136,15 @@ bool AngelFishActor::init(){
 	
 	//Run the swiming action forever
 	runAction(RepeatForever::create(fishAnimate));
-	
-	schedule(schedule_selector(FishActor::updateFishMovement), 3.5+rand()%2);
-	
+		
 	return true;
 }
+
+void AngelFishActor::activateFishMovement(){
+	
+    schedule(schedule_selector(FishActor::updateFishMovement), 3.5+rand()%2);
+}
+
 
 Animate* AngelFishActor::playDeathAnimation(){
 	
@@ -182,9 +190,12 @@ bool CroakerActor::init(){
 	//Run the swiming action forever
 	runAction(RepeatForever::create(fishAnimate));
 	
-	schedule(schedule_selector(FishActor::updateFishMovement), 2+rand()%4);
-	
 	return true;
+}
+
+void CroakerActor::activateFishMovement(){
+	
+    schedule(schedule_selector(FishActor::updateFishMovement), 2+rand()%4);
 }
 
 Animate* CroakerActor::playDeathAnimation(){
@@ -231,9 +242,13 @@ bool AmphiprionActor::init(){
 	//Run the swiming action forever
 	runAction(RepeatForever::create(fishAnimate));
 	
-	schedule(schedule_selector(FishActor::updateFishMovement), 3+rand()%2);
 	
 	return true;
+}
+
+void AmphiprionActor::activateFishMovement(){
+	
+    schedule(schedule_selector(FishActor::updateFishMovement), 1+rand()%4);
 }
 
 Animate* AmphiprionActor::playDeathAnimation(){
@@ -284,9 +299,12 @@ bool BreamActor::init(){
 	//Run the swiming action forever
 	runAction(RepeatForever::create(fishAnimate));
 	
-	schedule(schedule_selector(FishActor::updateFishMovement), 2+rand()%3);
-	
 	return true;
+}
+
+void BreamActor::activateFishMovement(){
+	
+    schedule(schedule_selector(FishActor::updateFishMovement), 2+rand()%3);
 }
 
 Animate* BreamActor::playDeathAnimation(){

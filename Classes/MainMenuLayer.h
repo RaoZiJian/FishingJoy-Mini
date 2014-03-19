@@ -38,11 +38,11 @@ protected:
 	/** Callback func when touch the select scne button */
 	void sceneChoose(Ref* sender);
 	
-	/** Update */
-	virtual void update(float delta);
+	/** Callback func when the fish need to turn back */
+	void turnBack(Node* sender);
 	
-	/** Update the movement of fishes*/
-	void updateFishMovement();
+	/** Create the action of fish and return */
+	ActionInterval* createFishMoveAction(FishActor* fish);
 };
 
 

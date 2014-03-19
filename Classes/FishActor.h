@@ -40,6 +40,9 @@ public:
 	/** Update the fish movement */
 	void updateFishMovement(float dt);
 	
+	/** Activate the fish movement */
+	void activateFishMovement();
+	
 protected:
 	CC_SYNTHESIZE(float, fishScore, FishScore);
 };
@@ -52,6 +55,7 @@ public:
 	
 	CREATE_FUNC(SmallFishActor);
 	Animate* playDeathAnimation();
+	void activateFishMovement();
 };
 
 class AngelFishActor : public FishActor{
@@ -62,6 +66,7 @@ public:
 	
 	CREATE_FUNC(AngelFishActor);
 	Animate* playDeathAnimation();
+	void activateFishMovement();
 };
 
 class CroakerActor : public FishActor{
@@ -72,6 +77,7 @@ public:
 	
 	CREATE_FUNC(CroakerActor);
 	Animate* playDeathAnimation();
+	void activateFishMovement();
 };
 
 class AmphiprionActor : public FishActor{
@@ -82,6 +88,7 @@ public:
 	
 	CREATE_FUNC(AmphiprionActor);
 	Animate* playDeathAnimation();
+	void activateFishMovement();
 };
 
 class BreamActor : public FishActor{
@@ -92,6 +99,7 @@ public:
 	
 	CREATE_FUNC(BreamActor);
 	Animate* playDeathAnimation();
+	void activateFishMovement();
 };
 
 #endif
