@@ -36,6 +36,11 @@ FishActor* FishActor::createWithType(FishActorType fishType){
 			fish = BreamActor::create();
 			break;
 			
+		case FishActorType::MarlinsFish:
+			
+			fish = MarlinsFishActor::create();
+			break;
+			
 		default:
 			break;
 	}
@@ -321,5 +326,61 @@ Animate* BreamActor::playDeathAnimation(){
 	auto deathAnimation = Animation::createWithSpriteFrames(deathFrames, 0.1);
 	auto deathAnimate = Animate::create(deathAnimation);
 
+	return deathAnimate;
+}
+
+bool MarlinsFishActor::init(){
+	
+	FishActor::init();
+	
+	setSpeedX(0.1f);
+	setSpeedY(0.1f);
+	
+	setFishScore(100.0f);
+	
+	fishType = FishActorType::MarlinsFish;
+	
+	//Read the swimming animations textures
+	auto fishes = Vector<SpriteFrame*>();
+	
+	fishes.pushBack(SpriteFrameCache::getInstance()->getSpriteFrameByName("MarlinsFish_actor_001.png"));
+	fishes.pushBack(SpriteFrameCache::getInstance()->getSpriteFrameByName("MarlinsFish_actor_002.png"));
+	fishes.pushBack(SpriteFrameCache::getInstance()->getSpriteFrameByName("MarlinsFish_actor_003.png"));
+	fishes.pushBack(SpriteFrameCache::getInstance()->getSpriteFrameByName("MarlinsFish_actor_004.png"));
+	fishes.pushBack(SpriteFrameCache::getInstance()->getSpriteFrameByName("MarlinsFish_actor_005.png"));
+	fishes.pushBack(SpriteFrameCache::getInstance()->getSpriteFrameByName("MarlinsFish_actor_006.png"));
+	fishes.pushBack(SpriteFrameCache::getInstance()->getSpriteFrameByName("MarlinsFish_actor_007.png"));
+	fishes.pushBack(SpriteFrameCache::getInstance()->getSpriteFrameByName("MarlinsFish_actor_008.png"));
+	fishes.pushBack(SpriteFrameCache::getInstance()->getSpriteFrameByName("MarlinsFish_actor_009.png"));
+	fishes.pushBack(SpriteFrameCache::getInstance()->getSpriteFrameByName("MarlinsFish_actor_010.png"));
+	
+	//Create swimming animation
+	auto fishAnimation = Animation::createWithSpriteFrames(fishes,0.1);
+	auto fishAnimate = Animate::create(fishAnimation);
+	
+	//Run the swiming action forever
+	runAction(RepeatForever::create(fishAnimate));
+	
+	return true;
+}
+
+void MarlinsFishActor::activateFishMovement(){
+	
+    schedule(schedule_selector(FishActor::updateFishMovement), 2+rand()%3);
+}
+
+Animate* MarlinsFishActor::playDeathAnimation(){
+	
+	//Read the death anmtions textures
+	auto deathFrames = Vector<SpriteFrame*>();
+	deathFrames.pushBack(SpriteFrameCache::getInstance()->getSpriteFrameByName("MarlinsFish_death_001.png"));
+	deathFrames.pushBack(SpriteFrameCache::getInstance()->getSpriteFrameByName("MarlinsFish_death_002.png"));
+	deathFrames.pushBack(SpriteFrameCache::getInstance()->getSpriteFrameByName("MarlinsFish_death_003.png"));
+	deathFrames.pushBack(SpriteFrameCache::getInstance()->getSpriteFrameByName("MarlinsFish_death_004.png"));
+	
+	//Create the death anmation
+	auto deathAnimation = Animation::createWithSpriteFrames(deathFrames, 0.1);
+	auto deathAnimate = Animate::create(deathAnimation);
+	
 	return deathAnimate;
 }

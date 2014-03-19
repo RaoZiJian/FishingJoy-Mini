@@ -36,6 +36,7 @@ bool MainMenuLayer::init(){
 	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("MainMenu/UI_GameMenuText_cn-hd.plist");
 	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("MainMenu/UI_GameStartMenuLayer-hd.plist");
 	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("MainMenu/FishActor-Small-hd.plist");
+	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("MainMenu/FishActor-Marlin-hd.plist");
 	
 	//Create the start button of the game
 	auto startGameBtn = Sprite::createWithSpriteFrameName("ui_button_box02_02.png");
@@ -101,11 +102,11 @@ void MainMenuLayer::fishActorsInital(){
 		auto breamFishActor = FishActor::createWithType(FishActor::FishActorType::SmallFish);
 		
 		//Set the position of the fishes like a matrix
-		smallFishActor->setPosition(Point(2000-winSize.width/8*(fishIndex+1),winSize.height-winSize.height/6));
-		angelFishActor->setPosition(Point(2000-winSize.width/8*(fishIndex+1),winSize.height-winSize.height/6*2));
-		croakerFishActor->setPosition(Point(2000-winSize.width/8*(fishIndex+1),winSize.height-winSize.height/6*3));
-		amphiprionFishActor->setPosition(Point(2000-winSize.width/8*(fishIndex+1),winSize.height-winSize.height/6*4));
-		breamFishActor->setPosition(Point(2000-winSize.width/8*(fishIndex+1),winSize.height-winSize.height/6*5));
+		smallFishActor->setPosition(Point(2000-winSize.width/10*(fishIndex+1),winSize.height-winSize.height/6));
+		angelFishActor->setPosition(Point(2000-winSize.width/10*(fishIndex+1),winSize.height-winSize.height/6*2));
+		croakerFishActor->setPosition(Point(2000-winSize.width/10*(fishIndex+1),winSize.height-winSize.height/6*3));
+		amphiprionFishActor->setPosition(Point(2000-winSize.width/10*(fishIndex+1),winSize.height-winSize.height/6*4));
+		breamFishActor->setPosition(Point(2000-winSize.width/10*(fishIndex+1),winSize.height-winSize.height/6*5));
 		
 		smallFishActor->runAction(createFishMoveAction(smallFishActor));
 		angelFishActor->runAction(createFishMoveAction(angelFishActor));
@@ -120,14 +121,13 @@ void MainMenuLayer::fishActorsInital(){
 		addChild(croakerFishActor,1);
 		addChild(amphiprionFishActor,1);
 		addChild(breamFishActor,1);
-		
-		//Add the fishes into the vector
-		fishActors.pushBack(smallFishActor);
-		fishActors.pushBack(angelFishActor);
-		fishActors.pushBack(croakerFishActor);
-		fishActors.pushBack(amphiprionFishActor);
-		fishActors.pushBack(breamFishActor);
 	}
+	
+	auto marlin = FishActor::createWithType(FishActor::FishActorType::MarlinsFish);
+	marlin->setVisible(false);
+	marlin->setPosition(Point(2000, winSize.height/2));
+	marlin->runAction(MainMenuLayer::createMarlinMoveAction((MarlinsFishActor*)marlin));
+	addChild(marlin, 1);
 }
 
 void MainMenuLayer::startGameEvent(Ref* sender){
@@ -139,7 +139,7 @@ void MainMenuLayer::startGameEvent(Ref* sender){
 	Director::getInstance()->replaceScene(replaceScene);
 }
 
-void MainMenuLayer::sceneChoose(Object *){
+void MainMenuLayer::sceneChoose(Ref* sender){
 		
 }
 
@@ -168,7 +168,25 @@ void MainMenuLayer::turnBack(Node* sender){
 	}
 }
 
+void MainMenuLayer::marlinTurnBack(Node *sender){
+	
+	if(sender->getRotation()==0.0f){
+		
+		sender->setVisible(true);
+		sender->setRotation(180.00f);
+	}else {
+		
+		sender->setVisible(false);
+		sender->setRotation(0.00f);
+	}
+}
+
 ActionInterval* MainMenuLayer::createFishMoveAction(FishActor *fish){
 	
 	return RepeatForever::create(Sequence::create(MoveTo::create(12, Point(fish->getPositionX()-1300, fish->getPositionY())),CallFunc::create(CC_CALLBACK_0(MainMenuLayer::turnBack,this,fish)),MoveTo::create(8, Point(fish->getPositionX()+1000,fish->getPositionY())),CallFunc::create(CC_CALLBACK_0(MainMenuLayer::turnBack,this,fish)), NULL));
+}
+
+ActionInterval* MainMenuLayer::createMarlinMoveAction(MarlinsFishActor *fish){
+	
+	return RepeatForever::create(Sequence::create(MoveTo::create(12, Point(fish->getPositionX()-1300, fish->getPositionY())),CallFunc::create(CC_CALLBACK_0(MainMenuLayer::marlinTurnBack,this,fish)),MoveTo::create(8, Point(fish->getPositionX()+1000,fish->getPositionY())),CallFunc::create(CC_CALLBACK_0(MainMenuLayer::marlinTurnBack,this,fish)), NULL));
 }

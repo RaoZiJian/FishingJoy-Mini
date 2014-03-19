@@ -26,9 +26,6 @@ protected:
 	/** Init the fishes */
 	void fishActorsInital();
 	
-	/** The vector of the fishes */
-	Vector<FishActor*> fishActors;
-	
 	/** Create Bubble */
 	ParticleSystemQuad* createPaopao(Point position);
 	
@@ -41,8 +38,14 @@ protected:
 	/** Callback func when the fish need to turn back */
 	void turnBack(Node* sender);
 	
+	/** Callback func when the fish need to turn back */
+	void marlinTurnBack(Node* sender);
+	
 	/** Create the action of fish and return */
 	ActionInterval* createFishMoveAction(FishActor* fish);
+		
+	/** Create the action of marlin and return */
+	ActionInterval* createMarlinMoveAction(MarlinsFishActor* fish);
 };
 
 

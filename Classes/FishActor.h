@@ -23,6 +23,7 @@ public:
 		Croaker,
 		Amphiprion,
 		Bream,
+		MarlinsFish,
     };
 	
 	/** Speed property of the fishes */
@@ -101,5 +102,17 @@ public:
 	Animate* playDeathAnimation();
 	void activateFishMovement();
 };
+
+class MarlinsFishActor : public FishActor{
+	
+public:
+	
+	bool init();
+	
+	CREATE_FUNC(MarlinsFishActor);
+	Animate* playDeathAnimation();
+	void activateFishMovement();
+};
+
 
 #endif
