@@ -48,6 +48,7 @@ bool FishingLayer::init(){
 	
 	//Get the instance of label of score
 	scoreLabel = dynamic_cast<TextAtlas*>(widget->getChildByName("Score"));
+	score = 0;
 	
 	//Get the instance of cannon
 	cannon = dynamic_cast<ImageView*>(widget->getChildByName("cannon"));
