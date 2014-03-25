@@ -36,13 +36,13 @@ void FishingPauseLayer::continueEvent(Widget* target, TouchEventType type){
 	if(type==TouchEventType::TOUCH_EVENT_ENDED){
 
 		//Set the background to normal
-		auto background = (Sprite*)(getParent()->getChildByTag(101));
+		auto background = (Sprite*)(getParent()->getChildByTag(101)->getChildByTag(102));
 		background->setTexture("CocoStudioRes/background.jpg");
 		background->setScale(1.0f);
 		background->setZOrder(-1.0f);
 	
 		//Resume all the action and touch events
-		Director::getInstance()->resume();
+		getParent()->getChildByTag(101)->onEnter();
 	
 		//Remove the pause layer and its children
 		removeAllChildrenWithCleanup(true);

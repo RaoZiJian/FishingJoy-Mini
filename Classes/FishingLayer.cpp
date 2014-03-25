@@ -25,13 +25,17 @@
 bool FishingLayer::init(){
 	
 	Layer::init();
+    
+    //Set tag of the layer, and get it in pause layer
+    setTag(101);
+    
 	_bullet=NULL;
 	
 	//Add background picture
 	auto background = Sprite::create("CocoStudioRes/background.jpg");
 	background->setAnchorPoint(Point(0,0));
 	background->setPosition(Point(0,0));
-	background->setTag(101);
+	background->setTag(102);
 	addChild(background,0);
 	
 	//Read the resources of CocoStudio json file, and add it to the scene
@@ -160,15 +164,15 @@ void FishingLayer::pauseEvent(Widget* target, TouchEventType type){
 		auto pauseLayer = FishingPauseLayer::create();
 	
 		//Pause all the actions and animations
-		Director::getInstance()->pause();
+		this->onExit();
 
 		//Get the background ant change it to the pause texture
-		auto background = (Sprite*)getChildByTag(101);
+		auto background = (Sprite*)getChildByTag(102);
 		background->setTexture("GameScene/bgblur01_01-hd.png");
 		background->setScaleX(winSize.width/background->getContentSize().width);
 		background->setScaleY(winSize.height/background->getContentSize().height);
 		background->setZOrder(2);
-		addChild(pauseLayer,3);
+		this->getParent()->addChild(pauseLayer,3);
 	}
 }
 
