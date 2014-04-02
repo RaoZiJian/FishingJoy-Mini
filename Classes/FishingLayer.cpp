@@ -67,6 +67,13 @@ bool FishingLayer::init(){
 	auto pauseBtn = dynamic_cast<Button*>(widget->getChildByName("pauseBtn"));
 	pauseBtn->addTouchEventListener(this, toucheventselector(FishingLayer::pauseEvent));
 	
+	//turn on the background music
+	auto turnOnMusicBtn= dynamic_cast<ImageView *>(widget->getChildByName("ImageView_42"));
+	turnOnMusicBtn->addTouchEventListener(this,toucheventselector(FishingLayer::turnOnMusic));
+	//turn off the background music
+	auto turnOffMusicBtn= dynamic_cast<Button *>(widget->getChildByName("music"));
+	turnOffMusicBtn->addTouchEventListener(this,toucheventselector(FishingLayer::turnOffMusic));
+    
 	//Activate update
 	scheduleUpdate();
 	
@@ -362,4 +369,14 @@ void FishingLayer::updateFishMovement(){
 		auto rotation = -atan2(shiftY, shiftX);
 		fish->setRotation(rotation*180.0f/3.14f+180.0f);
 	}
+}
+
+void FishingLayer::turnOffMusic(Widget* target,TouchEventType type){
+
+    CocosDenshion::SimpleAudioEngine::getInstance()->pauseBackgroundMusic();
+   
+}
+void FishingLayer::turnOnMusic(Widget* target,TouchEventType type){
+
+	CocosDenshion::SimpleAudioEngine::getInstance()->resumeBackgroundMusic();
 }

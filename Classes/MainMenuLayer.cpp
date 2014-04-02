@@ -30,7 +30,7 @@ bool MainMenuLayer::init(){
 	//Set game logo
 	auto ui_Logo = Sprite::create("MainMenu/main_ui_title_cn-hd.png");
 	ui_Logo->setPosition(Point(winSize.width/2.0f, winSize.height/1.35f));
-	addChild(ui_Logo,2);
+	addChild(ui_Logo,2.0f);
 	
 	//Read the texture to sprite frame cache
 	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("MainMenu/UI_GameMenuText_cn-hd.plist");

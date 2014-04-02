@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:FishJoyMini.xcodeproj">
+      location = "self:FishingJoyMini.xcodeproj">
    </FileRef>
 </Workspace>

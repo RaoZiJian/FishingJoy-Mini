@@ -38,7 +38,7 @@ protected:
 	/** Callback func when the fish need to turn back */
 	void turnBack(Node* sender);
 	
-	/** Callback func when the fish need to turn back */
+	/** Callback func when the marlin need to turn back */
 	void marlinTurnBack(Node* sender);
 	
 	/** Create the action of fish and return */

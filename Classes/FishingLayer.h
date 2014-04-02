@@ -53,6 +53,12 @@ protected:
 	/** Callback func of pause button */
 	void pauseEvent(Widget* target,TouchEventType type);
 
+	/**turn off backgroundMusic*/
+	void turnOffMusic(Widget* target,TouchEventType type);
+    
+	/**turn on backgroundMusic */
+	void turnOnMusic(Widget* target,TouchEventType type);
+    
 	void bulletShoot(Point endPosition);
 	
 	void setCannonRotation(Widget* target, Point targetPos);
