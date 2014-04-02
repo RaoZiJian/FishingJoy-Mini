@@ -23,15 +23,19 @@
 #endif // CC_PLATFOR_ANDROID
 
 bool FishingLayer::init(){
+    
 	musicTurnOff=true;
 	Layer::init();
 	_bullet=NULL;
+    
+    //Set tag of the layer, and get it in pause layer
+    setTag(101);
 	
 	//Add background picture
 	auto background = Sprite::create("CocoStudioRes/background.jpg");
 	background->setAnchorPoint(Point(0,0));
 	background->setPosition(Point(0,0));
-	background->setTag(101);
+	background->setTag(102);
 	addChild(background,0);
 	
 	//Read the resources of CocoStudio json file, and add it to the scene
@@ -174,7 +178,6 @@ void FishingLayer::bulletShoot(Point endPosition){
 		net2->setAnchorPoint(Point(0, 0));
 		net3->setAnchorPoint(Point(0, 0));
 		
-		
 		//Shoot the bullet and release after the action ended
 		_bullet->runAction(Sequence::create(MoveTo::create(1, endPosition),
 											CallFunc::create(CC_CALLBACK_0(FishingLayer::bulletRelease,this)),
@@ -184,8 +187,6 @@ void FishingLayer::bulletShoot(Point endPosition){
 		net1->runAction(Sequence::create(scale00,scale01,scale02,scale03,scale04,NULL));
 		net2->runAction(Sequence::create(scale000,scale001,scale002,scale003,scale004,NULL));
 		net3->runAction(Sequence::create(scale0000,scale0001,scale0002,scale0003,scale0004,NULL));
-		
-		
 		
 		//Play bullet shoot music effect
 		CocosDenshion::SimpleAudioEngine::getInstance()->playEffect(SOUND_FIRE);
@@ -208,9 +209,6 @@ void FishingLayer::bulletRelease(){
 	addChild(net1,1);
 	addChild(net2,1);
 	addChild(net3,1);
-    
-	
-	
 }
 
 void FishingLayer::netRelease(){
@@ -230,18 +228,18 @@ void FishingLayer::pauseEvent(Widget* target, TouchEventType type){
 		auto winSize = Director::getInstance()->getWinSize();
         
 		//Pause all the actions and animations
-		Director::getInstance()->pause();
+        this->onExit();
         
 		//Get the background ant change it to the pause texture
-		auto background = (Sprite*)getChildByTag(101);
-		background->setTexture("GameScene/bgblur01_01-hd.png");//ƒ£∫˝Õº∆¨
+		auto background = (Sprite*)getChildByTag(102);
+		background->setTexture("GameScene/bgblur01_01-hd.png");
 		background->setScaleX(winSize.width/background->getContentSize().width);
 		background->setScaleY(winSize.height/background->getContentSize().height);
 		background->setZOrder(2);
         
 		//Create the pause layer
 		auto pauseLayer = FishingPauseLayer::create();
-		addChild(pauseLayer,3);
+		this->getParent()->addChild(pauseLayer,3);
 	}
 }
 
@@ -389,8 +387,6 @@ void FishingLayer::removeFishes(){
 	fishActor->setVisible(false);
 	fishActor->removeAllChildrenWithCleanup(true);
 	fishActor->removeFromParent();
-    
-	
 	
 	//Play music effect when catch a fish
 	CocosDenshion::SimpleAudioEngine::getInstance()->playEffect(SOUND_COIN);
