@@ -15,7 +15,7 @@ bool MainMenuScene::init(){
 	MainMenuLayer* mainMenuLyaer = MainMenuLayer::create();
 	
 	//Add the main menu layer to the scene
-	addChild(mainMenuLyaer,0);
+	addChild(mainMenuLyaer,10);
 	
 	return true;
 }

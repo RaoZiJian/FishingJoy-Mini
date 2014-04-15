@@ -189,13 +189,17 @@ public:
     //override "ignoreContentAdaptWithSize" method of widget.
     virtual void ignoreContentAdaptWithSize(bool ignore) override;
     
+    //override the widget's hitTest function to perfom its own
+    virtual bool hitTest(const Point &pt) override;
     /**
      * Returns the "class name" of widget.
      */
     virtual std::string getDescription() const override;
+    
+CC_CONSTRUCTOR_ACCESS:
+    virtual bool init() override;
 
 protected:
-    virtual bool init() override;
     virtual void initRenderer() override;
     float getPercentWithBallPos(float location);
     void percentChangedEvent();

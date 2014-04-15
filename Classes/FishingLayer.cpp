@@ -131,7 +131,7 @@ void FishingLayer::bulletShoot(Point endPosition){
         net1=Sprite::createWithTexture(netFish->getTexture(),Rect(0,0,80,80));
         net2=Sprite::createWithTexture(netFish->getTexture(),Rect(0,0,80,80));
         net3=Sprite::createWithTexture(netFish->getTexture(),Rect(0,0,80,80));
-
+        
         net1->setRotation(90.0f);
         net2->setRotation(180.0f);
         net3->setRotation(270.0f);
@@ -250,7 +250,7 @@ void FishingLayer::turnOffMusic(Widget* target,TouchEventType type)
 }
 
 void FishingLayer::turnOnMusic(Widget* target,TouchEventType type){
-
+    
 	CocosDenshion::SimpleAudioEngine::getInstance()->resumeBackgroundMusic();
 }
 
@@ -295,7 +295,7 @@ void FishingLayer::update(float delta){
 	collideCheck();
 }
 
-void FishingLayer::collideCheck(){//â‰ˆË†â—Šâ‰¤ÂºÃâ‰¤â€š
+void FishingLayer::collideCheck(){//Åö×²¼ì²â
 	
 	//Check the collide when the bullet is exist
 	if(_bullet!=NULL){
@@ -426,7 +426,7 @@ void FishingLayer::fishActorsInital(){
 		addChild(croakerFishActor,1);
 		addChild(amphiprionFishActor,1);
 		addChild(breamFishActor,1);
-		
+    
 		//Add the fishes into the fish vector
 		fishActors.pushBack(smallFishActor);
 		fishActors.pushBack(angelFishActor);

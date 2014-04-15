@@ -108,8 +108,12 @@ public:
     virtual const Size& getContentSize() const;
     void formatText();
     virtual void ignoreContentAdaptWithSize(bool ignore);
+    virtual std::string getDescription() const override;
+	
+CC_CONSTRUCTOR_ACCESS:
+    virtual bool init() override;
+    
 protected:
-    virtual bool init();
     virtual void initRenderer();
     void pushToContainer(Node* renderer);
     void handleTextRenderer(const char* text, const char* fontName, float fontSize, const Color3B& color, GLubyte opacity);

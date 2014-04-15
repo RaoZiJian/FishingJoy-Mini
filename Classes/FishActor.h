@@ -29,10 +29,7 @@ public:
 	/** Speed property of the fishes */
 	CC_SYNTHESIZE(float, speedX, SpeedX);
 	CC_SYNTHESIZE(float, speedY, SpeedY);
-
-    /** Score of a fish*/
-    CC_SYNTHESIZE(float, fishScore, FishScore);
-    
+	
 	FishActorType fishType;
 	
 	/** Create the fish by their types */
@@ -41,11 +38,14 @@ public:
 	/** Play the death animation */
 	Animate* playDeathAnimation();
 	
-	/** Activate the fish movement */
-	void activateFishMovement();
-    
 	/** Update the fish movement */
 	void updateFishMovement(float dt);
+	
+	/** Activate the fish movement */
+	void activateFishMovement();
+	
+protected:
+	CC_SYNTHESIZE(float, fishScore, FishScore);
 };
 
 class SmallFishActor : public FishActor{

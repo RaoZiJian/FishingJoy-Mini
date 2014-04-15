@@ -9,9 +9,8 @@
 
 #ifndef FishJoyMini_MainMenuScene_h
 #define FishJoyMini_MainMenuScene_h
-USING_NS_CC;
 
-class MainMenuScene : public Scene
+class MainMenuScene : public cocos2d::Scene
 {
 public:
 

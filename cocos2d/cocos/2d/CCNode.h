@@ -1337,13 +1337,15 @@ public:
     
     virtual void setOpacityModifyRGB(bool bValue) {CC_UNUSED_PARAM(bValue);}
     virtual bool isOpacityModifyRGB() const { return false; };
-
-protected:
+    
+CC_CONSTRUCTOR_ACCESS:
     // Nodes should be created using create();
     Node();
     virtual ~Node();
+
     virtual bool init();
 
+protected:
     /// lazy allocs
     void childrenAlloc(void);
     
@@ -1450,11 +1452,13 @@ protected:
     bool		_cascadeColorEnabled;
     bool        _cascadeOpacityEnabled;
 
+    static int s_globalOrderOfArrival;
+    
 private:
     CC_DISALLOW_COPY_AND_ASSIGN(Node);
 };
 
-//#pragma mark - NodeRGBA
+// NodeRGBA
 
 /** NodeRGBA is a subclass of Node that implements the RGBAProtocol protocol.
  

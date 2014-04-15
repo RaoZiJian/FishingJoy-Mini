@@ -24,10 +24,10 @@ public:
 protected:
 	
 	/** Init the fishes */
-	void fishActorsInital();
+	void fishActorsInital();//界面出现鱼队列
 	
 	/** Create Bubble */
-	ParticleSystemQuad* createPaopao(Point position);
+	ParticleSystemQuad* createPaopao(Point position);//游戏主界面上的水其气泡
 	
 	/** Callback func when touch the startgame button */
 	void startGameEvent(Ref* sender);
@@ -38,7 +38,7 @@ protected:
 	/** Callback func when the fish need to turn back */
 	void turnBack(Node* sender);
 	
-	/** Callback func when the marlin need to turn back */
+	/** Callback func when the fish need to turn back */
 	void marlinTurnBack(Node* sender);
 	
 	/** Create the action of fish and return */

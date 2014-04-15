@@ -34,7 +34,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
 
     return true;
 }
-
+/*
 // This function will be called when the app is inactive. When comes a phone call,it's be invoked too
 void AppDelegate::applicationDidEnterBackground() {
     Director::getInstance()->stopAnimation();
@@ -49,4 +49,17 @@ void AppDelegate::applicationWillEnterForeground() {
 
     // if you use SimpleAudioEngine, it must resume here
     // SimpleAudioEngine::sharedEngine()->resumeBackgroundMusic();
+}
+*/
+
+// This function will be called when the app is inactive. When comes a phone call,it's be invoked too
+void AppDelegate::applicationDidEnterBackground()
+{
+	CCDirector::sharedDirector()->pause();
+}
+
+// this function will be called when the app is active again
+void AppDelegate::applicationWillEnterForeground()
+{
+	CCDirector::sharedDirector()->resume();
 }

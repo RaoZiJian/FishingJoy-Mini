@@ -171,9 +171,11 @@ public:
     float getTitleFontSize() const;
     void setTitleFontName(const char* fontName);
     const char* getTitleFontName() const;
+    
+CC_CONSTRUCTOR_ACCESS:
+    virtual bool init() override;
 
 protected:
-    virtual bool init() override;
     virtual void initRenderer() override;
     virtual void onPressStateChangedToNormal() override;
     virtual void onPressStateChangedToPressed() override;
@@ -193,7 +195,7 @@ protected:
     Node* _buttonNormalRenderer;
     Node* _buttonClickedRenderer;
     Node* _buttonDisableRenderer;
-    LabelTTF* _titleRenderer;
+    Label* _titleRenderer;
     std::string _normalFileName;
     std::string _clickedFileName;
     std::string _disabledFileName;

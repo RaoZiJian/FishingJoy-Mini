@@ -16,7 +16,7 @@
 #include "SimpleAudioEngine.h"
 #include "extensions/cocos-ext.h"
 #include "ui/CocosGUI.h"
-#include "AppDelegate.h"
+//#include "AppDelegate.h"
 #include "CCScene.h"
 
 USING_NS_CC;
@@ -29,7 +29,7 @@ public:
 	
 	bool init();
 	CREATE_FUNC(FishingLayer);
-
+    
 protected:
 	
 	void fishActorsInital();

@@ -401,8 +401,13 @@ static tinyxml2::XMLElement* generateElementForObject(const Value& value, tinyxm
         node->LinkEndChild(content);
         return node;
     }
+    
+    //object is bool
+    if (value.getType() == Value::Type::BOOLEAN) {
+		tinyxml2::XMLElement* node = doc->NewElement(value.asString().c_str());
+		return node;
+    }
 
-    //FIXME:XXX How to deal with Boolean ??
 
     // object is Array
     if (value.getType() == Value::Type::VECTOR)
@@ -742,7 +747,11 @@ void FileUtils::setSearchResolutionsOrder(const std::vector<std::string>& search
 
 void FileUtils::addSearchResolutionsOrder(const std::string &order)
 {
-    _searchResolutionsOrderArray.push_back(order);
+    std::string resOrder = order;
+    if (!resOrder.empty() && resOrder[resOrder.length()-1] != '/')
+        resOrder.append("/");
+        
+    _searchResolutionsOrderArray.push_back(resOrder);
 }
 
 const std::vector<std::string>& FileUtils::getSearchResolutionsOrder()
